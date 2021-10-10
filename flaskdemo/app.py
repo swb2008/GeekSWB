@@ -18,6 +18,6 @@ if __name__ == '__main__':
     app.run()
 
 
-@app.rote('/user/<name>')
+@app.route('/user/<name>')
 def user(name):
     return'Hello,%s!'%name
