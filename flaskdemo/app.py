@@ -13,11 +13,10 @@ def py():
     return 'python'
 
 
+@app.route('/user/<name>')
+def user(name):
+    return 'Hello,%s!' % name
+
 
 if __name__ == '__main__':
     app.run()
-
-
-@app.route('/user/<name>')
-def user(name):
-    return'Hello,%s!'%name
