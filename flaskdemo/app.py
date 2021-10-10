@@ -16,3 +16,8 @@ def py():
 
 if __name__ == '__main__':
     app.run()
+
+
+@app.rote('/user/<name>')
+def user(name):
+    return'Hello,%s!'%name
