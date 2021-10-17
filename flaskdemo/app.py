@@ -34,11 +34,13 @@ def err():
 def info():
     name = request.form.get("username")
     password = request.form.get("password")
-    dict = {}
+    d = {}
     with open("userinfo","r") as f:
-        dict = eval(f.read())
-    print(dict)
-    return '登陆成功,%s'%name
+        d = eval(f.read())
+    if d.__contains__(name):
+        return '登陆成功,%s'%name
+    else:
+        return '登陆失败'
 
 
 if __name__ == '__main__':
