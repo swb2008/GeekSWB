@@ -34,6 +34,10 @@ def err():
 def info():
     name = request.form.get("username")
     password = request.form.get("password")
+    dict = {}
+    with open("userinfo","r") as f:
+        dict = eval(f.read())
+    print(dict)
     return '登陆成功,%s'%name
 
 
