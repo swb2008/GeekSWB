@@ -32,7 +32,9 @@ def err():
 
 @app.route('/info',methods=["post"])
 def info():
-    return '登陆成功'
+    name = request.form.get("username")
+    password = request.form.get("password")
+    return '登陆成功,%s'%name
 
 
 if __name__ == '__main__':
