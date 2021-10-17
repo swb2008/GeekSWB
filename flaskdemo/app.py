@@ -8,9 +8,11 @@ app = flask.Flask(__name__,static_url_path='')
 @app.route('/')
 @app.route('/home')
 def hello_world():
-    # user_agent = request.headers.get("User-Agent")
-    # return 'Hello World!%s' % user_agent
-    return "index.html"
+    return """<form action="/info" method="post">
+        用户名：<input type="text" name="username"></br>
+        密 码:<input type="text" name="password"></br>
+        <button>登陆</button>
+    </form>"""
 
 
 @app.route('/python')
