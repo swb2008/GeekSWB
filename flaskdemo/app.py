@@ -1,23 +1,15 @@
 import flask
-from flask import request
+from flask import request, render_template
 from flask import make_response
 
 app = flask.Flask(__name__,static_url_path='')
 
 
 @app.route('/')
-@app.route('/home')
 def hello_world():
-    return """<form action="/info" method="post">
-        用户名：<input type="text" name="username"></br>
-        密 码:<input type="text" name="password"></br>
-        <button>登陆</button>
-    </form>"""
+    return render_template("login.html")
 
 
-@app.route('/python')
-def py():
-    return 'python'
 
 
 @app.route('/user/<int:name>')
