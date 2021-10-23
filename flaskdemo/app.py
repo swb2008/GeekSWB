@@ -1,14 +1,19 @@
 import flask
-from flask import request, render_template
+from flask import request, render_template, session
 from flask import make_response
 
 app = flask.Flask(__name__,static_url_path='')
+app.secret_key = "wefwefwef65"
 
 
 @app.route('/')
 def hello_world():
     #跳转到登录页
-    return render_template("login.html")
+    p = session.get("user_info")
+    if not p:
+        return render_template("login.html")
+    else:
+        return "登陆成功"
 
 
 
@@ -33,6 +38,8 @@ def info():
     with open("userinfo","r") as f:
         d = eval(f.read())
     if d.__contains__(name):
+        # session是一个特殊的字典 {"":"","":""}
+        session["user_info"] = name
         return '登陆成功,%s'%name
     else:
         return render_template("login.html",msg='用户名或密码错误')
