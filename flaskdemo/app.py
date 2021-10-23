@@ -7,6 +7,7 @@ app = flask.Flask(__name__,static_url_path='')
 
 @app.route('/')
 def hello_world():
+    #跳转到登录页
     return render_template("login.html")
 
 
@@ -34,7 +35,7 @@ def info():
     if d.__contains__(name):
         return '登陆成功,%s'%name
     else:
-        return '登陆失败'
+        return render_template("login.html",msg='用户名或密码错误')
 
 
 if __name__ == '__main__':
