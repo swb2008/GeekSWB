@@ -13,7 +13,7 @@ def hello_world():
     if not p:
         return render_template("login.html")
     else:
-        return "登陆成功"
+        return render_template("main.html")
 
 
 
@@ -40,12 +40,16 @@ def info():
     if d.__contains__(name):
         # session是一个特殊的字典 {"":"","":""}
         session["user_info"] = name
-        return '登陆成功,%s'%name
+        return render_template("main.html",msg2=name)
     else:
         return render_template("login.html",msg='用户名或密码错误')
-
+@app.route('/logout')
+def logout():
+    del session
+    return render_template("login.html")
 
 if __name__ == '__main__':
     print(app.url_map)
     app.run()
+
 
