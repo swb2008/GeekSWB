@@ -42,6 +42,10 @@ def logout():
     del session["user_info"]
     return render_template("login.html")
 
+@app.route('/rule')
+def rule():
+    return render_template("rule.html")
+
 
 if __name__ == '__main__':
     print(app.url_map)
