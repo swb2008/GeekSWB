@@ -4,7 +4,7 @@ from flask import make_response
 
 app = flask.Flask(__name__, static_url_path='')
 app.secret_key = "wefwefwef65"
-
+app.debug = True
 
 @app.route('/')
 def hello_world():
@@ -41,10 +41,10 @@ def info():
 def logout():
     del session["user_info"]
     return render_template("login.html")
-
-@app.route('/rule')
-def rule():
-    return render_template("rule.html")
+#
+# @app.route('/rule')
+# def rule():
+#     return render_template("rule.html")
 
 
 if __name__ == '__main__':
