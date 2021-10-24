@@ -46,6 +46,11 @@ def logout():
 # def rule():
 #     return render_template("rule.html")
 
+@app.route("/create")
+def treat_room():
+    """生成目标数字，创建房间号"""
+    room_num=str(random.randint(1,20))
+
 
 if __name__ == '__main__':
     print(app.url_map)
