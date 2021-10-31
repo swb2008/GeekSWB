@@ -60,7 +60,13 @@ def creat_room():
         f.write(r_t_n + "/n")
     return "创建的房间号为：%s,生成目标数字是%s" % (room_num, target_num)
 
-
+@app.route("/join",methods=["post"])
+def online_public():
+    """"加入房间"""
+    #获取房间号
+    room_number=request.form.get("room_num")
+    #判断文件是否存在
+    res=os.path.exists("room_tag.txt")
 
 if __name__ == '__main__':
     print(app.url_map)
