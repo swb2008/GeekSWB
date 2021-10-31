@@ -81,9 +81,9 @@ def online_public():
                     if room_number == x:
                         return render_template("guess.html", v_y=y)
                     else:
-                        return "房间号不存在"
+                        return render_template("main.html",m="房间号不存在")
     else:
-        return "房间号不存在，请创建房间号"
+        return render_template("main.html",m="房间号不存在，请创建房间号")
 
 
 if __name__ == '__main__':
