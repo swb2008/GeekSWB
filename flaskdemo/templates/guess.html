@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>猜数字游戏</title>
+
+</head>
+<body>
+
+<div id="dataid" d="{{v_y}}" style="display:none"></div>
+</body>
+</html>
+<script>
+    var target = document.getElementById('dataid').getAttribute('d');
+    var current = undefined;
+    var cancelled = false;
+    debugger;
+    while (target!=current) {
+        current = prompt("请输入你猜的数字：");
+        if (!current) {
+            cancelled = true;
+            break;
+        }
+        if (current < target) {
+            alert('你猜的数字太小！')
+        }
+        if (current > target) {
+            alert('你猜的数字太大！');
+        }
+    }
+    if(!cancelled){
+        alert('猜中了！');
+    }
+    window.location = "/"
+</script>
