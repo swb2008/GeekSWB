@@ -61,6 +61,7 @@ def creat_room():
     return "创建的房间号为：%s,生成目标数字是%s" % (room_num, target_num)
 
 
+
 if __name__ == '__main__':
     print(app.url_map)
     app.run()
