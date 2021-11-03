@@ -84,7 +84,7 @@ pip install flask
 ## 里程碑二
 让我们执行我们刚创建的脚本：
 ```shell
-python hello.py
+python swbApp.py
 ```
 
 现在你可以通过浏览器访问你服务器的5000端口，看，应用生效了：
