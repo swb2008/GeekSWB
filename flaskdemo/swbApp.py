@@ -54,7 +54,7 @@ def logout():
 # def rule():
 #     return render_template("rule.html")
 
-@app.route("/create")
+@app.route("/create",methods=["post"])
 def creat_room():
     """生成目标数字，创建房间号"""
     room_num = str(random.randint(1, 20))
@@ -62,7 +62,8 @@ def creat_room():
     r_t_n = room_num + " " + target_num
     with open("room_tag.txt", "a+") as f:
         f.write(r_t_n + "\n")
-    return "创建的房间号为：%s,生成目标数字是%s" % (room_num, target_num)
+    # return "创建的房间号为：%s,生成目标数字是%s" % (room_num, target_num)
+    return  render_template("main.html",a=room_num)
 
 
 # @app.route('/genVC')
