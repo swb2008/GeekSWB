@@ -5,6 +5,7 @@ import flask
 from flask import request, render_template, session
 from flask import make_response
 import random
+import verifiCode
 
 app = flask.Flask(__name__, static_url_path='')
 app.secret_key = "wefwefwef65"
@@ -63,6 +64,13 @@ def creat_room():
         f.write(r_t_n + "\n")
     return "创建的房间号为：%s,生成目标数字是%s" % (room_num, target_num)
 
+
+# @app.route('/genVC')
+# def genVC():
+#     # 生成验证码图片
+#     src = verifiCode.genVerifiCode()
+#     # 返回验证码图片
+#     return render_template("login.html",verify=src)
 
 @app.route("/join", methods=["post"])
 def online_public():
