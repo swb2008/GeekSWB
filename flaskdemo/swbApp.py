@@ -61,15 +61,17 @@ def creat_room():
     target_num = str(random.randint(1, 200))
     r_t_n = room_num + " " + target_num
     room=[]
-    with open("room_tag.txt", "a+") as f:
-        f.write(r_t_n + "\n")
+    with open("room_tag.txt", "r") as fr:
         while 1:
-            room_tag_data = f.readline()
+            room_tag_data = fr.readline()
             if room_tag_data:
                 x, y = room_tag_data.split(" ")
                 room.append(x)
             else:
                 break
+    with open("room_tag.txt", "r+") as f:
+        f.write(r_t_n + "\n")
+
     # return "创建的房间号为：%s,生成目标数字是%s" % (room_num, target_num)
     # 返回模板文件一个列表，房间号，目标数字，
     return  render_template("main.html",contents=room)
