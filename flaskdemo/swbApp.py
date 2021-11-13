@@ -73,7 +73,7 @@ def creat_room():
             room_tag_data = fr.readline()
             if room_tag_data:
                 x, y = room_tag_data.split(" ")
-                room.append(x)
+                room.append([x,y])
             else:
                 break
     with open("room_tag.txt", "a") as f:
