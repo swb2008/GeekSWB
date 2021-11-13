@@ -38,7 +38,14 @@ def info():
     if d.__contains__(name):
         # session是一个特殊的字典 {"":"","":""}
         session["user_info"] = name
-        return render_template("main.html", msg2=name)
+        r=[]
+        with open ('room_tag.txt','r')as f:
+            while 1:
+                if f.readline()=='':
+                    break
+                x,y=f.readline().split(' ')
+                r.append(x)
+        return render_template("main.html", msg2=r)
     else:
         return render_template("login.html", msg='用户名或密码错误')
 

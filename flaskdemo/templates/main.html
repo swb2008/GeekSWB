@@ -5,7 +5,7 @@
     <title>孙闻博的主页</title>
 </head>
 <body>
-欢迎 {{msg2}} 来到孙闻博的主页！！！
+欢迎来到孙闻博的主页！！！
     <form action="/logout" method="get">
         <button>注销</button>
     </form>
@@ -15,7 +15,7 @@
         <h3>如果你想创建一个房间，请点击这个</h3>
         <button>创建房间</button>
         <h1>
-            {% for i in contents %}
+            {% for i in msg2 %}
             {{i}}
             {% endfor %}
         </h1>
