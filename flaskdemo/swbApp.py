@@ -43,8 +43,10 @@ def info():
             while 1:
                 if f.readline()=='':
                     break
-                x,y=f.readline().split(' ')
-                r.append([x,y])
+                x,y,z=f.readline().split(' ')
+                if z!=name:
+                    y='*'
+                r.append([x,y,z])
         return render_template("main.html", msg2=r)
     else:
         return render_template("login.html", msg='用户名或密码错误')
@@ -66,14 +68,17 @@ def creat_room():
     """生成目标数字，创建房间号"""
     room_num = str(random.randint(1, 20))
     target_num = str(random.randint(1, 200))
-    r_t_n = room_num + " " + target_num
+    p = session.get("user_info")
+    r_t_n = room_num + " " + target_num+' '+p
     room=[]
     with open("room_tag.txt", "r") as fr:
         while 1:
             room_tag_data = fr.readline()
             if room_tag_data:
-                x, y = room_tag_data.split(" ")
-                room.append([x,y])
+                x, y,z = room_tag_data.split(" ")
+                if z!=p:
+                    y='*'
+                room.append([x,y,z])
             else:
                 break
     with open("room_tag.txt", "a") as f:

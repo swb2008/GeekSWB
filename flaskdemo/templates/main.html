@@ -16,11 +16,13 @@
         <button>创建房间</button>
     </form>
     <table>
+        <th>房主</th>
         <th>房间号</th>
         <th>里面的数字</th>
         <tbody>
         {% for i in msg2 %}
         <tr>
+            <td>{{i[2]}}</td>
             <td>{{i[0]}}</td>
             <td>{{i[1]}}</td>
         </tr>
