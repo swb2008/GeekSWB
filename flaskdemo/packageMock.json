@@ -1,0 +1,196 @@
+{
+  "msg": 1,
+  "data": {
+    "id": 550188,
+    "fatherId": 0,
+    "generation": 1,
+    "name": "李圭",
+    "children": [
+      {
+        "id": 550187,
+        "fatherId": 550188,
+        "generation": 2,
+        "name": "李让",
+        "children": [
+          {
+            "id": 550196,
+            "fatherId": 550187,
+            "generation": 3,
+            "name": "李良用",
+            "children": []
+          },
+          {
+            "id": 550197,
+            "fatherId": 550187,
+            "generation": 3,
+            "name": "李良埔",
+            "children": []
+          },
+          {
+            "id": 550198,
+            "fatherId": 550187,
+            "generation": 3,
+            "name": "李良辰",
+            "children": []
+          },
+          {
+            "id": 550212,
+            "fatherId": 550187,
+            "generation": 3,
+            "name": "李良时",
+            "children": [
+              {
+                "id": 550216,
+                "fatherId": 550212,
+                "generation": 4,
+                "name": "李九仓",
+                "children": [
+                  {
+                    "id": 550226,
+                    "fatherId": 550216,
+                    "generation": 5,
+                    "name": "李承后",
+                    "children": []
+                  },
+                  {
+                    "id": 550227,
+                    "fatherId": 550216,
+                    "generation": 5,
+                    "name": "李承先",
+                    "children": []
+                  },
+                  {
+                    "id": 550229,
+                    "fatherId": 550216,
+                    "generation": 5,
+                    "name": "李承安",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "id": 550219,
+                "fatherId": 550212,
+                "generation": 4,
+                "name": "李九廒",
+                "children": [
+                  {
+                    "id": 550231,
+                    "fatherId": 550219,
+                    "generation": 5,
+                    "name": "李承忠",
+                    "children": []
+                  },
+                  {
+                    "id": 550232,
+                    "fatherId": 550219,
+                    "motherId": 0,
+                    "generation": 5,
+                    "name": "李承祖",
+                    "children": [
+                      {
+                        "id": 586978,
+                        "fatherId": 550232,
+                        "generation": 6,
+                        "name": "李化龙",
+                        "children": []
+                      },
+                      {
+                        "id": 586980,
+                        "fatherId": 550232,
+                        "main": true,
+                        "generation": 6,
+                        "name": "李应龙",
+                        "children": []
+                      },
+                      {
+                        "id": 586985,
+                        "fatherId": 550232,
+                        "generation": 6,
+                        "name": "李耀龙",
+                        "children": []
+                      },
+                      {
+                        "id": 586986,
+                        "fatherId": 550232,
+                        "generation": 6,
+                        "name": "李变龙",
+                        "children": []
+                      },
+                      {
+                        "id": 586987,
+                        "fatherId": 550232,
+                        "generation": 6,
+                        "name": "李云龙",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "id": 550222,
+                "fatherId": 550212,
+                "motherId": 0,
+                "generation": 4,
+                "name": "李九库",
+                "children": [
+                  {
+                    "id": 550234,
+                    "fatherId": 550222,
+                    "generation": 5,
+                    "name": "李承功",
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": 550236,
+            "fatherId": 550187,
+            "generation": 3,
+            "name": "李良路",
+            "children": [
+              {
+                "id": 550239,
+                "fatherId": 550236,
+                "generation": 4,
+                "name": "李九思",
+                "children": []
+              },
+              {
+                "id": 550240,
+                "fatherId": 550236,
+                "generation": 4,
+                "name": "李九现",
+                "children": []
+              },
+              {
+                "id": 550242,
+                "fatherId": 550236,
+                "generation": 4,
+                "name": "李九荣",
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 550237,
+            "fatherId": 550187,
+            "generation": 3,
+            "name": "李良友",
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 550194,
+        "fatherId": 550188,
+        "generation": 2,
+        "name": "李谦",
+        "children": []
+      }
+    ]
+  }
+}
