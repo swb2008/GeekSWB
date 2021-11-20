@@ -58,16 +58,31 @@ function createTreeNodes(dataModel, parent, level, count, callback) {
     }
 }
 
-function createTreeNodesNew(dataModel, parent, level, count, callback) {
+function createTreeNodesNew(dataModel, parent, jsonObject, level, count, callback) {
     level--;
-    var num = (typeof count === 'number' ? count : count[level]);
+    var num = jsonObject.children.length;
 
     while (num--) {
-        var node = createNode(dataModel, parent);
+        var jsonOb = jsonObject.children[num];
+        var node = createNodeNew(dataModel, parent);
         // 调用回调函数，用户可以在回调里面设置节点相关属性
-        callback(node, level, num);
+        callback(node, jsonOb, level, num);
         if (level === 0) continue;
         // 递归调用创建孩子节点
-        createTreeNodesNew(dataModel, node, level, count, callback);
+
+        createTreeNodesNew(dataModel, node, jsonOb, level, count, callback);
     }
+}
+
+function createNodeNew(dataModel, parent) {
+    var node = new ht.Node();
+    if (parent) {
+        // 设置父亲节点
+        node.setParent(parent);
+
+        createEdge(dataModel, parent, node);
+    }
+    // 添加到数据容器中
+    dataModel.add(node);
+    return node;
 }
