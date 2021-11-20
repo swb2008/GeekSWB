@@ -57,17 +57,3 @@ function createTreeNodes(dataModel, parent, level, count, callback) {
         createTreeNodes(dataModel, node, level, count, callback);
     }
 }
-
-function createTreeNodesNew(dataModel, parent, level, count, callback) {
-    level--;
-    var num = (typeof count === 'number' ? count : count[level]);
-
-    while (num--) {
-        var node = createNode(dataModel, parent);
-        // 调用回调函数，用户可以在回调里面设置节点相关属性
-        callback(node, level, num);
-        if (level === 0) continue;
-        // 递归调用创建孩子节点
-        createTreeNodesNew(dataModel, node, level, count, callback);
-    }
-}

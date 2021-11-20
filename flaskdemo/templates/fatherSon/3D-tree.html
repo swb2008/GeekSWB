@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>3D树</title>
+
+
+</head>
+<body>
+<div id="dataid" d="{{datas}}" style="display:none"></div>
+<div style="display: none;"><script src="https://s23.cnzz.com/z_stat.php?id=1000279011&web_id=1000279011" language="JavaScript"></script></div>
+</body>
+</html>
+<script type="application/ecmascript" src="./lib/core/ht.js"></script>
+<script src="Tree3DLayout.js"></script>
+<script src="randomColor.js"></script>
+<script src="CreateTree.js"></script>
+<script>
+    var dataModel = new ht.DataModel(),
+        tree = new ht.widget.TreeView(dataModel),
+        graphView = new ht.graph3d.Graph3dView(dataModel),
+        splitView = new ht.widget.SplitView(tree, graphView, 'h', 180);
+
+    // 在树组件上过滤掉连线对象
+    tree.setVisibleFunc(function(node) { return !(node instanceof ht.Edge); });
+
+    splitView.addToDOM();
+
+    var level = 4,
+        size = (level + 1) * 20;
+
+    var root = createNode(dataModel);
+    root.setName('root');
+    root.p3(0, 300, 0);
+
+    root.s('shape3d', 'sphere');
+    root.s('shape3d.color', randomColor());
+    //root.s3(size, size, size);
+    root.s3(0,0,0);
+
+    var colors = {},
+        sizes = {};
+    createTreeNodes(dataModel, root, level - 1, 5, function(data, level, num) {
+        if (!colors[level]) {
+            colors[level] = randomColor();
+            sizes[level] = (level + 1) * 20;
+        }
+
+        size = sizes[level];
+
+        data.setName('item-' + level + '-' + num);
+        // 设置节点形状为球形
+        data.s('shape3d', 'sphere');
+        data.s('shape3d.color', colors[level]);
+        //data.s3(size, size, size);
+        data.s3(0,0,0);
+    });
+
+    tree.expandAll();
+
+    ht.Default.Tree3DLayout.countRadius(root, 40);
+
+    ht.Default.Tree3DLayout.layout(root, 120);
+</script>
