@@ -8,7 +8,6 @@ app.debug = True
 cu = None
 cx = None
 
-
 @app.before_first_request
 def con():
     global cu
@@ -23,15 +22,14 @@ def con():
 def hello_world():
     return render_template("main.html")
 
-
 @app.route('/create', methods=["post"])
 def create():
-    t = request.form.get('title')
-    c = request.form.get('content')
-    cu.execute("insert into articles ( title, content, author) VALUES ('%s','%s','%s')" % (t, c, 'swb'))
+    global cu
+    t=request.form.get('title')
+    c=request.form.get('content')
+    cu.excute("insert into articles ( title, content, author) VALUES ('%s','%s','%s')"%(t,c,'swb'))
     cx.commit()
-
-    return render_template("main.html", msg='发布成功')
+    return render_template("main.html",msg='发布成功')
 
 
 if __name__ == '__main__':
