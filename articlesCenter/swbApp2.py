@@ -27,7 +27,7 @@ def create():
     global cu
     t=request.form.get('title')
     c=request.form.get('content')
-    cu.excute("insert into articles ( title, content, author) VALUES ('%s','%s','%s')"%(t,c,'swb'))
+    cu.execute("insert into articles ( title, content, author) VALUES ('%s','%s','%s')"%(t,c,'swb'))
     cx.commit()
     return render_template("main.html",msg='发布成功')
 
