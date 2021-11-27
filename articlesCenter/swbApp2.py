@@ -13,7 +13,7 @@ def con():
     global cu
     global cx
     # 连接数据库,创建连接对象
-    cx = sqlite3.connect("test.db")
+    cx = sqlite3.connect("test.db",check_same_thread=False)
     # 创建游标
     cu = cx.cursor()
 
