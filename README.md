@@ -119,7 +119,7 @@ server {
 
 将刚建立的配置文件使用符号链接到Nginx配置文件文件夹中，重启Nginx：
 ```shell
-udo ln -s /var/www/demoapp/demoapp_nginx.conf /etc/nginx/conf.d/
+sudo ln -s /var/www/demoapp/demoapp_nginx.conf /etc/nginx/conf.d/
 sudo /etc/init.d/nginx restart
 ```
 
