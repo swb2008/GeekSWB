@@ -9,10 +9,24 @@
     <form action="/create" method="post">
         <h3>请输入标题和内容</h3>
         标题：<input type="text" name="title"></br>
-        文章内容:</br><textarea name="content" cols="200" rows="8"></textarea>
+        文章内容:</br><textarea name="content" cols="200" rows="8"></textarea></br>
         <button>发布文章</button>{{msg}}
         <button type="reset">重置</button>
     </form>
+<table>
+        <th></th>
+        <th>标题</th>
+        <th>内容</th>
+        <tbody>
+        {% for i in msg2 %}
+        <tr>
+            <td></td>
+            <td>{{i[1]}}</td>
+            <td>{{i[2]}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
 </body>
 </html>

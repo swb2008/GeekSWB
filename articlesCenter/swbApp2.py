@@ -20,7 +20,9 @@ def con():
 
 @app.route('/')
 def hello_world():
-    return render_template("main.html")
+    cu.execute("select * from articles")
+    ret=cu.fetchall()
+    return render_template("main.html",msg2=ret)
 
 @app.route('/create', methods=["post"])
 def create():
