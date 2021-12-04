@@ -9,8 +9,9 @@
     <form action="/create" method="post">
         <h3>请输入标题和内容</h3>
         标题：<input type="text" name="title"></br>
-        文章内容:<input type="text" name="content"></br>
+        文章内容:</br><textarea name="content" cols="200" rows="8"></textarea>
         <button>发布文章</button>{{msg}}
+        <button type="reset">重置</button>
     </form>
 
 </body>
