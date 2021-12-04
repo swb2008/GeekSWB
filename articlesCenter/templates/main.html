@@ -3,13 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+
+        function test(a_id,a_title,a_content, obj) {
+            var c = obj.checked;  //记录下当前复选框的状态
+            $(".che").removeAttr("checked");  //删除所有的选中
+            if(c == true){  //判断状态
+                //$(obj).attr("checked", 'true'); //为true 选中复选框
+                $(obj).prop("checked",true);
+                // 应该把这个文章的信息反显到编辑区
+                $("#title").val(a_title);
+                $("#content").val(a_content);
+            }else{
+                $(obj).removeAttr("checked"); //false 删除选中
+            }
+        }
+
+
+    </script>
 </head>
 <body>
 <h1>欢迎来到发表文章中心！</h1>
     <form action="/create" method="post">
         <h3>请输入标题和内容</h3>
-        标题：<input type="text" name="title"></br>
-        文章内容:</br><textarea name="content" cols="200" rows="8"></textarea></br>
+        标题：<input type="text" id="title" name="title"></br>
+        文章内容:</br><textarea id="content" name="content" cols="200" rows="8"></textarea></br>
         <button>发布文章</button>{{msg}}
         <button type="reset">重置</button>
     </form>
@@ -20,7 +39,7 @@
         <tbody>
         {% for i in msg2 %}
         <tr>
-            <td></td>
+            <td><input type="checkbox"  class="che" onclick="test('{{i[0]}}','{{i[1]}}', '{{i[2]}}', this)" /></td>
             <td>{{i[1]}}</td>
             <td>{{i[2]}}</td>
         </tr>
