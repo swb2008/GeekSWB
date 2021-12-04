@@ -13,6 +13,7 @@
                 //$(obj).attr("checked", 'true'); //为true 选中复选框
                 $(obj).prop("checked",true);
                 // 应该把这个文章的信息反显到编辑区
+                $("#id").val(a_id);
                 $("#title").val(a_title);
                 $("#content").val(a_content);
             }else{
@@ -32,6 +33,10 @@
         <button>发布文章</button>{{msg}}
         <button type="reset">重置</button>
     </form>
+<form action="/delete" method="post">
+    <input type="text" id="id" name="id" hidden="hidden">
+    <button>删除文章</button>
+</form>
 <table>
         <th></th>
         <th>标题</th>

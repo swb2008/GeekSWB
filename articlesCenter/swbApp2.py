@@ -31,7 +31,17 @@ def create():
     c=request.form.get('content')
     cu.execute("insert into articles ( title, content, author) VALUES ('%s','%s','%s')"%(t,c,'swb'))
     cx.commit()
-    return render_template("main.html",msg='发布成功')
+    cu.execute("select * from articles")
+    ret = cu.fetchall()
+    return render_template("main.html",msg='发布成功',msg2=ret)
+
+@app.route('/delete',methods=["post"])
+def delete():
+    t=int(request.form.get("id"))
+    cu.execute("delete from articles where id=%d"%t)
+    cu.execute("select * from articles")
+    ret = cu.fetchall()
+    return render_template("main.html", msg2=ret)
 
 
 if __name__ == '__main__':
